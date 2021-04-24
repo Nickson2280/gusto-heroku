@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+{%  block content %}
+    <section id ="event" style="padding-top: 20px;">
+        <h2 style="color: #FFFFFF; font-family: 'Columbia Print Cyrilic', sans-serif; font-size: 1.5em">Мероприятия</h2>
+        <div class="row align-items-start">
+            <div class="col-4" id="columns_special" style="height: 100%; background-color: rgba(255,255, 0, 0.7);">
+                <div class="title">
+                    <a style="text-decoration: none; color: #ffffff; font-family: 'Columbia Print Cyrilic', sans-serif;" href="/">{{ event.title }}</a>
+                </div>
+                <div class="dish_special_photo">
+                    <p class="centre"><img src="{{ event.photo.url }}" alt="Здесь должно быть изобраение, но его почему-то нет" class="img-fluid"> </p>
+                </div>
+                <div class="centre" style="font-size: 1.5em; font-family: 'Cowboy', sans-serif;">
+                    <div style="">
+                        <span >{{ event.description }}</span>
+                    </div>
+                </div>
+                <div style="font-size: 1.5em; font-family: 'Columbia Print Cyrilic', sans-serif;">
+                    <p class="centre"> {{ event.event_time }}/{{ event.event_date }}</p>
+                </div>
+                {% if event.price > 0 %}
+                <div class="price_dish" style="font-size: 1.5em; font-family: 'Columbia Print Cyrilic', sans-serif;">
+                    <p class="centre"> {{ event.price }} &#8372;</p>
+                </div>
+                {%  endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

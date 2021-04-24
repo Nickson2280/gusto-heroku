@@ -1,0 +1,24 @@
+{%  extends 'base.html' %}
+{%  block content %}
+    <section id ="spc" style="padding-top: 10px;">
+        <h2><a href="/" style="color: #EBE5EC; font-family: 'Columbia Print Cyrilic', sans-serif; font-size: 1.5em; text-decoration: none;">МЕНЮ ДНЯ</a></h2>
+        <div class="row align-items-start">
+            <div class="col-4" id="columns_menu" style="height: 100%; background-color: rgba(255, 0, 255, 0.55);">
+                <div class="title">
+                    <a style="text-decoration: none; color: #F1BC20; font-family: 'Cowboy', sans-serif;" href="/">Блюдо: {{ dish.title }}</a>
+                </div>
+                <div class="dish_photo">
+                    <p class="centre"><img src="{{ dish.photo.url }}" alt="Здесь должно быть изобраение, но его почему-то нет" class="img-fluid"> </p>
+                </div>
+                <div class="description_dish">
+                    <div style="font-family: 'Columbia Print Cyrilic', sans-serif; color: #F1BC20;">
+                        <span >{{ dish.description }}</span>
+                    </div>
+                </div>
+                <div class="price_dish" style="font-size: 1.5em; font-family: 'Columbia Print Cyrilic', sans-serif; color: #F1BC20;">
+                    <p class="centre"> {{ dish.price }} &#8372;</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+    <section id ="menu" style="padding-top: 10px;">
+        <h2 style="color: #FFFFFF; font-family: 'Cowboy', sans-serif; font-size: 1.5em">ВХОД</h2>
+        <div class="row align-items-start">
+            <div class="col-4" id="columns_menu" style="height: 100%; background-color: rgba(255,255, 0, 0.5);">
+                <div class="title">
+                    <a style="text-decoration: none; color: #ffffff; font-family: 'Columbia Print Cyrilic', sans-serif;">Войти в ситстему</a>
+                </div>
+                <div class="dish_photo">
+                    <p class="centre"><img src="/static/login-rounded-right.png" alt="Здесь должно быть изобраение, но его почему-то нет" class="img-fluid"></p>
+                </div>
+                <div class="description_dish">
+                    <div style="font-family: 'Cowboy', sans-serif;">
+                        <span>
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <input type="submit" value="Войти">
+                            </form>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
